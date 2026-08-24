@@ -16,6 +16,16 @@ app.get('/', (req, res) => { // rota raiz do servidor, quando alguém acessar a 
   res.send('Tekó backend está no ar!');
 });
 
+app.get('/plantios', (req, res) => {
+  fs.readFile('plantios.json', 'utf8', (erro, dados) => {
+    if (erro) {
+      res.status(500).send('Erro ao ler plantios');
+      return;
+    }
+    res.json(JSON.parse(dados));
+  });
+});
+
 app.get('/zonas-calor', (req, res) => {
   res.json(zonasCalor);
 });
@@ -52,8 +62,27 @@ app.get('/especies', (req, res) => {
 });
 
 app.post('/plantio', (req, res) => {
-  console.log('Dados recebidos:', req.body);
-  res.send('Plantio recebido com sucesso!');
+  const novoPlantio = req.body;
+  novoPlantio.id = Date.now().toString();
+  novoPlantio.criado_em = new Date().toISOString();
+
+  fs.readFile('plantios.json', 'utf8', (erro, dados) => {
+    if (erro) {
+      res.status(500).send('Erro ao ler plantios existentes');
+      return;
+    }
+
+    const plantios = JSON.parse(dados);
+    plantios.push(novoPlantio);
+
+    fs.writeFile('plantios.json', JSON.stringify(plantios, null, 2), (erroEscrita) => {
+      if (erroEscrita) {
+        res.status(500).send('Erro ao salvar plantio');
+        return;
+      }
+      res.status(201).json(novoPlantio);
+    });
+  });
 });
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server is running on http://0.0.0.0:${PORT}`);
