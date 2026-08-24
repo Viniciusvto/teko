@@ -1,0 +1,114 @@
+[
+  {
+    "id": "ipe-amarelo",
+    "nome_popular": "Ipê-amarelo",
+    "nome_cientifico": "Handroanthus albus",
+    "porte": "medio-grande",
+    "captacao_carbono": "alta",
+    "nativa": true,
+    "adequada_calcada": false,
+    "cuidados": {
+      "sol": "pleno sol",
+      "rega": "moderada, mais frequente nos primeiros 2 anos",
+      "poda": "anual, fora do período de floração",
+      "solo": "bem drenado, tolera solos pobres"
+    },
+    "observacoes": "Floração ornamental intensa; símbolo nacional. Recomendado para praças e áreas amplas."
+  },
+  {
+    "id": "ipe-roxo",
+    "nome_popular": "Ipê-roxo",
+    "nome_cientifico": "Handroanthus impetiginosus",
+    "porte": "medio-grande",
+    "captacao_carbono": "alta",
+    "nativa": true,
+    "adequada_calcada": false,
+    "cuidados": {
+      "sol": "pleno sol",
+      "rega": "moderada",
+      "poda": "anual",
+      "solo": "bem drenado"
+    },
+    "observacoes": "Floração roxa intensa no fim do inverno. Boa opção para grandes avenidas."
+  },
+  {
+    "id": "sibipiruna",
+    "nome_popular": "Sibipiruna",
+    "nome_cientifico": "Caesalpinia peltophoroides",
+    "porte": "grande",
+    "captacao_carbono": "alta",
+    "nativa": true,
+    "adequada_calcada": false,
+    "cuidados": {
+      "sol": "pleno sol",
+      "rega": "moderada",
+      "poda": "bienal",
+      "solo": "adaptável"
+    },
+    "observacoes": "Pode viver até 100 anos. Copa ampla, ótima para sombreamento de praças."
+  },
+  {
+    "id": "pau-ferro",
+    "nome_popular": "Pau-ferro",
+    "nome_cientifico": "Caesalpinia leiostachya",
+    "porte": "grande",
+    "captacao_carbono": "alta",
+    "nativa": true,
+    "adequada_calcada": false,
+    "cuidados": {
+      "sol": "pleno sol",
+      "rega": "baixa após estabelecida",
+      "poda": "mínima",
+      "solo": "adaptável"
+    },
+    "observacoes": "Pode chegar a 30m. Longe de fiação elétrica. Copa ampla e ornamental."
+  },
+  {
+    "id": "pata-de-vaca",
+    "nome_popular": "Pata-de-vaca",
+    "nome_cientifico": "Bauhinia forficata",
+    "porte": "pequeno-medio",
+    "captacao_carbono": "media",
+    "nativa": true,
+    "adequada_calcada": true,
+    "cuidados": {
+      "sol": "pleno sol a meia-sombra",
+      "rega": "moderada",
+      "poda": "tolera bem, crescimento rápido",
+      "solo": "adaptável"
+    },
+    "observacoes": "Ideal para calçadas. Uso medicinal tradicional. Flores brancas/rosas."
+  },
+  {
+    "id": "manaca-da-serra",
+    "nome_popular": "Manacá-da-serra",
+    "nome_cientifico": "Tibouchina mutabilis",
+    "porte": "medio",
+    "captacao_carbono": "media",
+    "nativa": true,
+    "adequada_calcada": true,
+    "cuidados": {
+      "sol": "pleno sol",
+      "rega": "moderada",
+      "poda": "leve, anual",
+      "solo": "bem drenado"
+    },
+    "observacoes": "Flores mudam de cor ao longo do ano. Não danifica infraestrutura urbana."
+  },
+  {
+    "id": "pitangueira",
+    "nome_popular": "Pitangueira",
+    "nome_cientifico": "Eugenia uniflora",
+    "porte": "pequeno",
+    "captacao_carbono": "baixa-media",
+    "nativa": true,
+    "adequada_calcada": true,
+    "cuidados": {
+      "sol": "pleno sol a meia-sombra",
+      "rega": "moderada",
+      "poda": "leve",
+      "solo": "adaptável"
+    },
+    "observacoes": "Produz frutos comestíveis. Excelente para espaços pequenos e atrai fauna urbana."
+  }
+]
