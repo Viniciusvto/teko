@@ -20,6 +20,26 @@ app.get('/zonas-calor', (req, res) => {
   res.json(zonasCalor);
 });
 
+app.get('/temperatura', async (req, res) => {
+  try {
+    const latitude = -22.9099;
+    const longitude = -47.0626;
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m`;
+
+    const respostaExterna = await fetch(url);
+    const dados = await respostaExterna.json();
+
+    res.json({
+      temperatura: dados.current.temperature_2m,
+      unidade: dados.current_units.temperature_2m,
+      atualizado_em: dados.current.time,
+    });
+  } catch (erro) {
+    res.status(500).send('Erro ao buscar temperatura');
+  }
+});
+
+
 app.get('/especies', (req, res) => {
   fs.readFile('especies.json', 'utf8', (erro, dados) => {
     if (erro) {
