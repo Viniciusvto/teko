@@ -1,6 +1,7 @@
 // essa biblioteca é usada para criar um servidor web
 const express = require('express');
 const cors = require('cors');
+const zonasCalor = require('./zonas-calor.json');
 const fs = require('fs');
 
 // cria uma instância do servidor web
@@ -13,6 +14,10 @@ app.use(cors());
 
 app.get('/', (req, res) => { // rota raiz do servidor, quando alguém acessar a raiz do servidor, essa função será executada
   res.send('Tekó backend está no ar!');
+});
+
+app.get('/zonas-calor', (req, res) => {
+  res.json(zonasCalor);
 });
 
 app.get('/especies', (req, res) => {

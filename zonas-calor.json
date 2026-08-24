@@ -1,0 +1,7 @@
+[
+  { "latitude": -22.9099, "longitude": -47.0626, "weight": 1.0 },
+  { "latitude": -22.9150, "longitude": -47.0700, "weight": 0.8 },
+  { "latitude": -22.9050, "longitude": -47.0550, "weight": 0.9 },
+  { "latitude": -22.8980, "longitude": -47.0650, "weight": 0.6 },
+  { "latitude": -22.9200, "longitude": -47.0500, "weight": 0.4 }
+]
