@@ -9,6 +9,18 @@ const app = express();
 
 const PORT = 3000; // porta que o servidor vai escutar
 
+// Pasta onde ficam os dados gravados pela API (fora da imagem, num volume)
+const path = require('path');
+const PASTA_DADOS = path.join(__dirname, 'dados');
+const ARQUIVO_PLANTIOS = path.join(PASTA_DADOS, 'plantios.json');
+
+// Na primeira execução (volume vazio), cria a pasta e uma lista vazia
+fs.mkdirSync(PASTA_DADOS, { recursive: true });
+if (!fs.existsSync(ARQUIVO_PLANTIOS)) {
+  fs.writeFileSync(ARQUIVO_PLANTIOS, '[]');
+}
+
+
 app.use(express.json());
 app.use(cors());
 
@@ -17,7 +29,7 @@ app.get('/', (req, res) => { // rota raiz do servidor, quando alguém acessar a 
 });
 
 app.get('/plantios', (req, res) => {
-  fs.readFile('plantios.json', 'utf8', (erro, dados) => {
+  fs.readFile(ARQUIVO_PLANTIOS, 'utf8', (erro, dados) => {
     if (erro) {
       res.status(500).send('Erro ao ler plantios');
       return;
@@ -66,7 +78,7 @@ app.post('/plantio', (req, res) => {
   novoPlantio.id = Date.now().toString();
   novoPlantio.criado_em = new Date().toISOString();
 
-  fs.readFile('plantios.json', 'utf8', (erro, dados) => {
+  fs.readFile(ARQUIVO_PLANTIOS, 'utf8', (erro, dados) => {
     if (erro) {
       res.status(500).send('Erro ao ler plantios existentes');
       return;
@@ -75,7 +87,7 @@ app.post('/plantio', (req, res) => {
     const plantios = JSON.parse(dados);
     plantios.push(novoPlantio);
 
-    fs.writeFile('plantios.json', JSON.stringify(plantios, null, 2), (erroEscrita) => {
+    fs.writeFile(ARQUIVO_PLANTIOS, JSON.stringify(plantios, null, 2), (erroEscrita) => {
       if (erroEscrita) {
         res.status(500).send('Erro ao salvar plantio');
         return;
